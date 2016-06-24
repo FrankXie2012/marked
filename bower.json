@@ -1,0 +1,22 @@
+{
+  "name": "marked",
+  "authors": [
+    "Frank Shieh <fr6nkxie@gmail.com>"
+  ],
+  "description": "A demo for marked.",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "marked": "^0.3.5",
+    "jquery": "^3.0.0",
+    "highlight": "^9.4.0"
+  }
+}

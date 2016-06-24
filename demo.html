@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Marked in the browser</title>
+  <link rel="stylesheet" href="bower_components/highlight/src/styles/github.css">
+  <style>
+  	.editor{ border: 1px solid #337ab7; padding: 10px; margin: 30px auto; width: 800px; display: block; min-height: 200px; }
+  	#content{ border: 1px solid #337ab7; padding: 10px; margin: 30px auto; width: 800px; }
+  </style>
+</head>
+<body>
+<textarea class="editor" placeholder="输入markdown语句"></textarea>
+<div id="content"></div>
+
+<script src="bower_components/jquery/dist/jquery.min.js"></script>
+<script src="bower_components/marked/lib/marked.js"></script>
+<script src="bower_components/highlight/src/highlight.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+<script>
+$('.editor').keyup(function(){
+	var _text = $('.editor').val();
+	marked.setOptions({
+		highlight: function (code) {
+			return require('highlight.js').highlightAuto(code).value;
+		}
+	});
+	document.getElementById('content').innerHTML = marked(_text);
+});
+</script>
+</body>
+</html>
